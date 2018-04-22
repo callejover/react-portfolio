@@ -19,10 +19,12 @@
   "license": "None",
   "homepage": "https://github.com/callejover/react-portfolio#readme",
   "dependencies": {
+    "bootstrap": "^4.1.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^2.8.1",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "reactstrap": "^5.0.0-beta.3"
   },
   "devDependencies": {
     "babel-core": "^6.16.0",
