@@ -1,0 +1,28 @@
+{
+  "name": "portfolio_backend",
+  "version": "1.0.0",
+  "description": "Node server for portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callejover/react-portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "backend"
+  ],
+  "author": "Carl Jovér",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/callejover/react-portfolio/issues"
+  },
+  "homepage": "https://github.com/callejover/react-portfolio#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0"
+  }
+}
