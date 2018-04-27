@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Contact from './Contact';
+
 import { Route, NavLink, HashRouter } from "react-router-dom";
 import { 
     Button, 
@@ -58,26 +60,6 @@ class School extends React.Component {
         )
     }
 }
-
-class Contact extends React.Component {
-    render(){
-        return(
-            <Container>
-                <h1>Contact</h1>
-                <Form>
-                    <FormGroup>
-                        <Label for="visitorEmail">Email</Label>
-                        <Input type="email" name="email" id="visitorEmail" placeholder="Enter your email..." />
-                        <Label for="visitorText">Message</Label>
-                        <Input type="textarea" name="text" id="visitorText" placeholder="Write me a message..."/>
-                    </FormGroup>
-                    <Button>Submit</Button>
-                </Form>
-            </Container>
-        )
-    }
-}
-
 
 class Main extends Component {
     render() {
