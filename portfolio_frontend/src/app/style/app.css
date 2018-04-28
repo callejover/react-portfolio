@@ -1,4 +1,6 @@
 body, h1, h2, h3, h4, h5, h6, a, p, ul, li {
+    font-family: 'Quicksand', sans-serif;
+    color: #f4f4f4;
     margin: 0;
 }
 
@@ -6,18 +8,54 @@ body {
     background: url("./app_wallpaper.jpg");
     background-repeat: no-repeat; 
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     min-height: 100vh;
   }
 
 .app, #navbar, #bio {
     justify-content: center;
 }
-#nav {
-    border: 2px solid red;
-    border-radius: 1em;
+
+.app {
+    padding-top: 2%;
 }
 
 .app li {
+    font-weight: 300;
     padding: 2px 30px;
+}
+
+#nav, #bio, #projects {
+    border: 1px solid #f4f4f4;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 1em;
+}
+
+#bio {
+    width: 40em;
+    text-align: center;
+}
+
+#projects {
+    width: 25em;
+    text-align: center;
+}
+
+#projects img {
+    max-height: 8em;
+    max-width: 8em;
+    padding: 0;
+}
+
+#js {
+    font-size: 0.9em;
+}
+
+#bootstrap {
+    font-size: 0.9em;
+}
+
+#react {
+    font-size: 1.4em;
+    padding-left: 0; 
 }
