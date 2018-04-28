@@ -1,36 +1,22 @@
 import React from 'react';
-
-import { 
-    Container, 
-    Row, 
-    Col } from 'reactstrap';
-
-class Distance extends React.Component {
-    render(){
-        return(
-            <h1>Distance</h1>
-        )
-    }
-}
-
-
-class Guestbook extends React.Component {
-    render(){
-        return(
-            <h1>Guestbook</h1>
-        )
-    }
-}
-
+import GoogleApiWrapper from './GoogleApiWrapper';
+import { Container } from 'reactstrap';
+ 
 class Contact extends React.Component {
-    render(){
-        return(
-            <Container>
-                <Distance />
-                <Guestbook />
-            </Container>
-        )
-    }
-}
+  constructor(props){
+    super(props)
 
+  }
+
+  render() {
+    return (
+      <Container>
+        <h1>Contact</h1>
+        <GoogleApiWrapper />
+      </Container>
+    );
+  }
+
+}
+ 
 export default Contact;

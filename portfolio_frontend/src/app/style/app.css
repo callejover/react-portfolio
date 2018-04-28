@@ -1,0 +1,23 @@
+body, h1, h2, h3, h4, h5, h6, a, p, ul, li {
+    margin: 0;
+}
+
+body {
+    background: url("./app_wallpaper.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+  }
+
+.app, #navbar, #bio {
+    justify-content: center;
+}
+#nav {
+    border: 2px solid red;
+    border-radius: 1em;
+}
+
+.app li {
+    padding: 2px 30px;
+}
