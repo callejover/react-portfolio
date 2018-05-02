@@ -13,7 +13,15 @@ import {
 class Contact extends React.Component {
   constructor(props){
     super(props)
+  }
 
+  componentWillMount(){
+
+    fetch('https://callejoverbackend.herokuapp.com/api/comments',{
+      
+    })
+    .then(data => data.json())
+    .then(res => console.log(res))
   }
 
   render() {

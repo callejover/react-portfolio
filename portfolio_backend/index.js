@@ -29,4 +29,4 @@ app.get('/api/comments', commentsController.comments);
 app.post('/api/comments', newCommentController.newComment);
 
 // LISTEN TO PORT
-app.listen(process.env.PORT, process.env.IP);
+app.listen(process.env.PORT || PORT, process.env.IP);
