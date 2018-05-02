@@ -29,6 +29,4 @@ app.get('/api/comments', commentsController.comments);
 app.post('/api/comments', newCommentController.newComment);
 
 // LISTEN TO PORT
-app.listen(PORT, () => {
-  console.log(`Yo! Now listening to port ${PORT}!` )
-})
+app.listen(process.env.PORT, process.env.IP);
