@@ -1,19 +1,17 @@
+
 // REQUIRE DEPENDENCIES
 const express       = require('express');
 const mysql         = require('mysql');
 const bodyParser    = require('body-parser');
 
-// CONNECT TO MYSQL DATABASE
-const connection = mysql.createConnection({
-  host:       'crockett.highstone.biz',
-  user:       'portfolio',
-  password:   'Portfolio123',
-  database:   'cjov_portfolio' 
-});
-
 // SETUP EXPRESS
-const app = express();
-const PORT = 9999;
+const app   = express();
+const PORT  = 9999;
+
+// REQUIRE CONTROLLERS
+const commentsController    = require('./controllers/comments-controller');
+const newCommentController  = require('./controllers/new-comment-controller');
+
 
 //SETUP BODY-PARSER
 app.use(bodyParser.json());
@@ -27,16 +25,8 @@ app.use(function(req, res, next) {
 });
 
 // REQUESTS
-app.get('/comment', function (req, res) {
-  connection.query('SELECT * FROM `comment`', [], function (error, results, fields) {
-  // error will be an Error if one occurred during the query
-  // results will contain the results of the query
-  // fields will contain information about the returned results fields (if any)
-  
-  res.json(results);
-  
-});
-});
+app.get('/api/comments', commentsController.comments);
+app.post('/api/comments', newCommentController.newComment);
 
 // LISTEN TO PORT
 app.listen(PORT, () => {
