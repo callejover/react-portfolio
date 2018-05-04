@@ -1,3 +1,5 @@
+/* ==================== GLOBAL STYLING ======================== */
+
 body, h1, h2, h3, h4, h5, h6, a, p, ul, li {
     font-family: 'Quicksand', sans-serif;
     color: #f4f4f4;
@@ -37,6 +39,8 @@ body {
     text-align: center;
 }
 
+/* ==================== FRONT END COMPONENT ======================== */
+
 #projects {
     width: 25em;
     text-align: center;
@@ -61,9 +65,13 @@ body {
     padding-left: 0; 
 }
 
+/* ==================== EOS PRICE COMPONENT ======================== */
+
 #eos-price {
     padding: 4em 0;
 }
+
+/* ==================== GUESTBOOK COMPONENT ======================== */
 
 #comments-container {
     max-height: 20em;

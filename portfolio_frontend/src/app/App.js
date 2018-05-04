@@ -1,25 +1,11 @@
-import React from "react";
-import Guestbook from './Guestbook';
-import Eos from './Eos';
-import Home from './Home';
-import FrontEnd from './Frontend';
+import React        from "react";
+import Guestbook    from './Guestbook';
+import Eos          from './Eos';
+import Home         from './Home';
+import FrontEnd     from './Frontend';
 
 import { Route, NavLink, HashRouter } from "react-router-dom";
-import { 
-    Button, 
-    Container, 
-    Navbar, 
-    NavbarToggler, 
-    NavbarBrand, 
-    Nav, 
-    NavItem, 
-    Row,
-    Col,
-    Form, 
-    FormGroup,
-    Label,
-    Input
-} from 'reactstrap';
+import { Container, Nav, NavItem, Navbar } from 'reactstrap';
 
 
 // NOTE!!!!!!   NavLink used in React-Router, not Bootstap!
@@ -50,7 +36,9 @@ class NavComponent extends React.Component {
     }
 }
 
-class App extends React.Component {
+
+
+export default class App extends React.Component {
     constructor(props) {
         super(props);
 
@@ -60,21 +48,6 @@ class App extends React.Component {
         })
 
         this.updateComments = this.updateComments.bind(this);
-    }
-
-    updateComments(){
-        fetch("https://callejoverbackend.herokuapp.com/api/comments")
-          .then(response => response.json())
-          .then(data => this.setState({ comments: data }));
-    }
-
-    componentDidMount() {
-        this.updateComments();
-        fetch('https://api.coinmarketcap.com/v2/ticker/1765/?convert=SEK')
-            .then(response => response.json())
-            .then(coin => this.setState({
-                currency: coin.data.quotes.SEK.price
-            }))
     }
 
     render() {
@@ -92,6 +65,24 @@ class App extends React.Component {
             </Container>
         );
     }
-}
 
-export default App;
+    // FIRE COMMENTS FUNCTION AND FETCH CURRENCY PRICE
+    componentDidMount() {
+        this.updateComments();
+        fetch('https://api.coinmarketcap.com/v2/ticker/1765/?convert=SEK')
+            .then(response => response.json())
+            .then(coin => this.setState({
+                currency: coin.data.quotes.SEK.price
+            }))
+    }
+
+
+    // CUSTOM FUNCTIONS
+
+    // FUNCTION TO FETCH COMMENTS FROM DB
+    updateComments(){
+        fetch("https://callejoverbackend.herokuapp.com/api/comments")
+          .then(response => response.json())
+          .then(data => this.setState({ comments: data }));
+    }
+}

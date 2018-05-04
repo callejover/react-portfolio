@@ -11,10 +11,6 @@ import {
  } from 'reactstrap';
  
 export default class Guestbook extends React.Component {
-  constructor(props){
-    super(props)
-  }
-
   render() {
     var listOfComments = this.props.comments.data;
     Array.isArray(listOfComments) ? 
@@ -23,7 +19,7 @@ export default class Guestbook extends React.Component {
           <Comment author={comment.author} body={comment.body} key={index}/>
         )
       })
-    : console.log(false);
+    : console.log('Not an array');
     return (
       <Container id="guestbook">
         <h1>Guestbook</h1>
@@ -39,15 +35,12 @@ export default class Guestbook extends React.Component {
   }
 }
 
-
+// COMPONENT TO SHOW ALL THE COMMENTS
 class Comment extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render(){
     return(
       <Container>
-        <div class="comment">
+        <div className="comment">
           <li>  
             <h3>{this.props.author}</h3>
             <p>{this.props.body}</p>
@@ -58,6 +51,7 @@ class Comment extends React.Component {
   }
 }
 
+// COMPONENT TO POST A NEW COMMENT
 class PostComment extends React.Component {
   constructor(props) {
     super(props);
@@ -68,36 +62,6 @@ class PostComment extends React.Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleInputChange(event) {
-      const target = event.target;
-      const value = target.value;
-      const name = target.name;
-
-      this.setState({
-        [name]: value
-      });
-      //console.log(target.value);
-    }
-
-  handleSubmit(event) {
-      fetch('https://callejoverbackend.herokuapp.com/api/comments',
-    {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        method: "POST",
-        body: JSON.stringify({author: this.state.author, body: this.state.body})
-    })
-    .then(res => {
-      console.log(res);
-      alert('Thank you for posting')
-    })
-    .catch(res => console.log(res))
-    
-    event.preventDefault();
   }
 
   render(){
@@ -124,5 +88,38 @@ class PostComment extends React.Component {
         </Row>
       </Form>
     )
+  }
+
+  
+  // CUSTOM FUNCTIONS
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  // SEND A POST REQUEST TO THE DB
+  handleSubmit(event) {
+      fetch('https://callejoverbackend.herokuapp.com/api/comments',
+    {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({author: this.state.author, body: this.state.body})
+    })
+    .then(res => {
+      console.log(res);
+      alert('Thank you for posting! Please refresh the page to view your comment')
+    })
+    .catch(res => console.log(res))
+    
+    event.preventDefault();
   }
 }

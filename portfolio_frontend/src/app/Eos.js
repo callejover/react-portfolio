@@ -1,11 +1,5 @@
 import React from "react";
-
-import { 
-    Button, 
-    Container, 
-    Row,
-    Col
-} from 'reactstrap';
+import { Container, Col } from 'reactstrap';
 
 export default class Eos extends React.Component {
     render(){

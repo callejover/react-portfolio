@@ -1,11 +1,5 @@
 import React from "react";
-
-import { 
-    Button, 
-    Container, 
-    Row,
-    Col
-} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 export default class FrontEnd extends React.Component {
     render(){

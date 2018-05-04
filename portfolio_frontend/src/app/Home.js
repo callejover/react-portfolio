@@ -1,11 +1,6 @@
 import React from "react";
 
-import { 
-    Button, 
-    Container, 
-    Row,
-    Col
-} from 'reactstrap';
+import { Container } from 'reactstrap';
 
 export default class Home extends React.Component {
     render(){
