@@ -61,7 +61,7 @@ Usage:
 * ```cd``` into portfolio_backend.
 * Run ```nodemon``` or ```node index.js``` to start the backend.
 
-Länkar:
+Links:
 ------
   
 **GitHub:**  
