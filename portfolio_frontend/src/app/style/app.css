@@ -2,6 +2,7 @@ body, h1, h2, h3, h4, h5, h6, a, p, ul, li {
     font-family: 'Quicksand', sans-serif;
     color: #f4f4f4;
     margin: 0;
+    padding: 0;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
     min-height: 100vh;
   }
 
-.app, #navbar, #bio {
+.app, #navbar, #home, #eos {
     justify-content: center;
 }
 
@@ -25,13 +26,13 @@ body {
     padding: 2px 30px;
 }
 
-#nav, #bio, #projects {
+#nav, #home, #projects, #eos, #guestbook {
     border: 1px solid #f4f4f4;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 1em;
 }
 
-#bio {
+#home, #eos, #guestbook {
     width: 40em;
     text-align: center;
 }
@@ -58,4 +59,30 @@ body {
 #react {
     font-size: 1.4em;
     padding-left: 0; 
+}
+
+#eos-price {
+    padding: 4em 0;
+}
+
+#comments-container {
+    max-height: 20em;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.comment {
+    border: 1px solid #f4f4f4;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 1em;
+    margin: 1em;
+}
+
+.comment li {
+    list-style-type: none;
+}
+
+#submit-button {
+    text-align: center;
+    padding: 1.2em;
 }
